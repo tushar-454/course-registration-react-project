@@ -11,6 +11,10 @@ const Courses = () => {
       .then((data) => setCourses(data));
   }, []);
   const handleTotalCredit = (credit) => {
+    const sumCredit = totalCredit + credit;
+    if (sumCredit > 20) {
+      return 0;
+    }
     setTotalCredit(totalCredit + credit);
   };
   return (
