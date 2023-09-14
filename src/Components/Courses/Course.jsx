@@ -31,7 +31,7 @@ const Course = ({ course, handleTotalCredit }) => {
       <div className='courseButton'>
         <button
           className='w-full text-xl font-semibold bg-blue text-white text-center rounded-lg py-2 active:bg-[#286ECA]'
-          onClick={() => handleTotalCredit(credit, title)}
+          onClick={() => handleTotalCredit(credit, title, price)}
         >
           Select
         </button>

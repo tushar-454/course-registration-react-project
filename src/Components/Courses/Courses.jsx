@@ -5,13 +5,14 @@ import Course from './Course';
 const Courses = () => {
   const [courses, setCourses] = useState([]);
   const [totalCredit, setTotalCredit] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [titles, setTitles] = useState([]);
   useEffect(() => {
     fetch('courses.json')
       .then((res) => res.json())
       .then((data) => setCourses(data));
   }, []);
-  const handleTotalCredit = (credit, clickTitle) => {
+  const handleTotalCredit = (credit, clickTitle, price) => {
     const sumCredit = totalCredit + credit;
     if (sumCredit > 20) {
       return 0;
@@ -20,6 +21,7 @@ const Courses = () => {
     if (isMatchTitle) {
       return 0;
     }
+    setTotalPrice(totalPrice + price);
     setTitles([...titles, clickTitle]);
     setTotalCredit(totalCredit + credit);
   };
@@ -36,7 +38,11 @@ const Courses = () => {
         ))}
       </div>
       <div className='courseStatics w-full lg:w-1/4'>
-        <CourseStatics totalCredit={totalCredit} titles={titles} />
+        <CourseStatics
+          totalCredit={totalCredit}
+          titles={titles}
+          totalPrice={totalPrice}
+        />
       </div>
     </div>
   );

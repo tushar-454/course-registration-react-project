@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-const CourseStatics = ({ totalCredit, titles }) => {
+const CourseStatics = ({ totalCredit, titles, totalPrice }) => {
   let serial = 1;
   return (
     <div className='bg-white rounded-lg p-4 space-y-4'>
@@ -25,7 +25,7 @@ const CourseStatics = ({ totalCredit, titles }) => {
       </div>
       <div className='creditTotal'>
         <p className='text-darkGray font-medium'>
-          Total Price : <span>48000</span> USD
+          Total Price : <span>{totalPrice}</span> USD
         </p>
       </div>
     </div>
@@ -34,5 +34,6 @@ const CourseStatics = ({ totalCredit, titles }) => {
 CourseStatics.propTypes = {
   totalCredit: PropTypes.number,
   titles: PropTypes.array,
+  totalPrice: PropTypes.number,
 };
 export default CourseStatics;
