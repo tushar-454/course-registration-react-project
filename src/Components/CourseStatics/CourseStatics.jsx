@@ -22,7 +22,7 @@ const CourseStatics = () => {
       </div>
       <div className='creditTotal pb-4 border-b border-line'>
         <p className='text-darkGray font-medium'>
-          Total Credit Hour : <span>13</span>
+          Total Credit Hour : <span>13</span> hr
         </p>
       </div>
       <div className='creditTotal'>

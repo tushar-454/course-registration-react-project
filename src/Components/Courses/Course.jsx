@@ -29,7 +29,7 @@ const Course = ({ course }) => {
         </div>
       </div>
       <div className='courseButton'>
-        <button className='w-full text-xl font-semibold bg-blue text-white text-center rounded-lg py-2'>
+        <button className='w-full text-xl font-semibold bg-blue text-white text-center rounded-lg py-2 active:bg-[#286ECA]'>
           Select
         </button>
       </div>
