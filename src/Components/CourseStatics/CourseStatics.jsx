@@ -1,4 +1,5 @@
-const CourseStatics = () => {
+import PropTypes from 'prop-types';
+const CourseStatics = ({ totalCredit }) => {
   return (
     <div className='bg-white rounded-lg p-4 space-y-4'>
       <div className='creditRemaining pb-4 border-b border-line'>
@@ -22,7 +23,7 @@ const CourseStatics = () => {
       </div>
       <div className='creditTotal pb-4 border-b border-line'>
         <p className='text-darkGray font-medium'>
-          Total Credit Hour : <span>13</span> hr
+          Total Credit Hour : <span>{totalCredit}</span> hr
         </p>
       </div>
       <div className='creditTotal'>
@@ -33,5 +34,7 @@ const CourseStatics = () => {
     </div>
   );
 };
-
+CourseStatics.propTypes = {
+  totalCredit: PropTypes.number,
+};
 export default CourseStatics;

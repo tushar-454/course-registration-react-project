@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import book from '../../assets/images/book.svg';
 import doller from '../../assets/images/doller.svg';
-const Course = ({ course }) => {
+const Course = ({ course, handleTotalCredit }) => {
   const { image, title, desc, price, credit } = course;
   return (
     <div className='bg-white rounded-lg  space-y-4 p-4'>
@@ -29,7 +29,10 @@ const Course = ({ course }) => {
         </div>
       </div>
       <div className='courseButton'>
-        <button className='w-full text-xl font-semibold bg-blue text-white text-center rounded-lg py-2 active:bg-[#286ECA]'>
+        <button
+          className='w-full text-xl font-semibold bg-blue text-white text-center rounded-lg py-2 active:bg-[#286ECA]'
+          onClick={() => handleTotalCredit(credit)}
+        >
           Select
         </button>
       </div>
@@ -38,5 +41,6 @@ const Course = ({ course }) => {
 };
 Course.propTypes = {
   course: PropTypes.object,
+  handleTotalCredit: PropTypes.func,
 };
 export default Course;
