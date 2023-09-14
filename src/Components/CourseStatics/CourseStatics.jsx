@@ -4,7 +4,7 @@ const CourseStatics = ({ totalCredit }) => {
     <div className='bg-white rounded-lg p-4 space-y-4'>
       <div className='creditRemaining pb-4 border-b border-line'>
         <h1 className='text-blue text-xl font-bold'>
-          Credit Hour Remaining 7 hr
+          Credit Hour Remaining {20 - totalCredit} hr
         </h1>
       </div>
       <div className='creditTitle'>
