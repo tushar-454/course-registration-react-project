@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-const CourseStatics = ({ totalCredit }) => {
+const CourseStatics = ({ totalCredit, titles }) => {
+  let serial = 1;
   return (
     <div className='bg-white rounded-lg p-4 space-y-4'>
       <div className='creditRemaining pb-4 border-b border-line'>
@@ -11,15 +12,11 @@ const CourseStatics = ({ totalCredit }) => {
         <h1 className='text-black text-2xl font-bold'>Course Name</h1>
       </div>
       <div className='creditCourseList pb-4 border-b border-line'>
-        <p className='text-gray text-base font-normal pb-1'>
-          1. Introduction to C Programming
-        </p>
-        <p className='text-gray text-base font-normal pb-1'>
-          1. Introduction to C Programming
-        </p>
-        <p className='text-gray text-base font-normal pb-1'>
-          1. Introduction to C Programming
-        </p>
+        {titles.map((title, index) => (
+          <p key={index} className='text-gray text-base font-normal pb-1'>
+            {serial++}. {title}
+          </p>
+        ))}
       </div>
       <div className='creditTotal pb-4 border-b border-line'>
         <p className='text-darkGray font-medium'>
@@ -36,5 +33,6 @@ const CourseStatics = ({ totalCredit }) => {
 };
 CourseStatics.propTypes = {
   totalCredit: PropTypes.number,
+  titles: PropTypes.array,
 };
 export default CourseStatics;
