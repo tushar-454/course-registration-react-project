@@ -9,17 +9,11 @@ export default {
         gray: '#1C1B1B99',
         darkGray: '#1C1B1BCC',
         blue: '#2F80ED',
+        line: '#1C1B1B33',
       },
     },
     container: {
       center: true,
-    },
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1440px',
     },
   },
   plugins: [],

@@ -10,14 +10,14 @@ const Courses = () => {
       .then((data) => setCourses(data));
   }, []);
   return (
-    <div className='coursesWraper flex gap-10 justify-between items-start'>
+    <div className='coursesWraper flex flex-col-reverse lg:flex-row gap-10 justify-between items-start'>
       {/* all Courses container  */}
-      <div className='courses grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+      <div className='courses w-full lg:w-3/4 grid gap-4 grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3'>
         {courses.map((course, index) => (
           <Course key={index} course={course} />
         ))}
       </div>
-      <div className='courseStatics'>
+      <div className='courseStatics w-full lg:w-1/4'>
         <CourseStatics />
       </div>
     </div>
