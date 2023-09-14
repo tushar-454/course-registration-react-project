@@ -10,9 +10,9 @@ const Courses = () => {
       .then((data) => setCourses(data));
   }, []);
   return (
-    <div className='coursesWraper'>
+    <div className='coursesWraper flex gap-10 justify-between items-start'>
       {/* all Courses container  */}
-      <div className='courses'>
+      <div className='courses grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
         {courses.map((course, index) => (
           <Course key={index} course={course} />
         ))}
