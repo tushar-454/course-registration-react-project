@@ -1,8 +1,10 @@
+import Header from './Components/Header/Header';
+
 function App() {
   return (
-    <>
-      <h1 className='text-4xl'>Almost Project setup completed</h1>
-    </>
+    <div className='container mx-auto px-4'>
+      <Header />
+    </div>
   );
 }
 
