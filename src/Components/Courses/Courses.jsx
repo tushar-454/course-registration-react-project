@@ -15,10 +15,12 @@ const Courses = () => {
   const handleTotalCredit = (credit, clickTitle, price) => {
     const sumCredit = totalCredit + credit;
     if (sumCredit > 20) {
+      alert('Can not add credit more then 20');
       return 0;
     }
     const isMatchTitle = titles.find((title) => title === clickTitle);
     if (isMatchTitle) {
+      alert('Can not add same course at a time.');
       return 0;
     }
     setTotalPrice(totalPrice + price);

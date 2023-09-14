@@ -6,8 +6,8 @@ export default {
       colors: {
         body: '#F3F3F3',
         black: '#1C1B1B',
-        gray: '#1C1B1B99',
-        darkGray: '#1C1B1BCC',
+        gray: '#1c1b1bd1',
+        darkGray: '#1c1b1b',
         blue: '#2F80ED',
         line: '#1C1B1B33',
       },
