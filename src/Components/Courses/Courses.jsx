@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import CourseStatics from '../CourseStatics/CourseStatics';
 import Course from './Course';
 
+// toast functionss
 const TitleMatch = () =>
   toast("You can't add same course multiple time!", {
     duration: 1500,
