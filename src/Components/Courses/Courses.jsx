@@ -1,6 +1,22 @@
 import { useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import CourseStatics from '../CourseStatics/CourseStatics';
 import Course from './Course';
+
+const TitleMatch = () =>
+  toast("You can't add same course multiple time!", {
+    duration: 1500,
+    icon: '⛔',
+    position: 'top-center',
+    style: { color: 'red' },
+  });
+const maxCreditReach = () =>
+  toast('Can not add credit more then 20!', {
+    duration: 1500,
+    icon: '⛔',
+    position: 'top-center',
+    style: { color: 'red' },
+  });
 
 const Courses = () => {
   const [courses, setCourses] = useState([]);
@@ -13,14 +29,14 @@ const Courses = () => {
       .then((data) => setCourses(data));
   }, []);
   const handleTotalCredit = (credit, clickTitle, price) => {
-    const sumCredit = totalCredit + credit;
-    if (sumCredit > 20) {
-      alert('Can not add credit more then 20');
-      return 0;
-    }
     const isMatchTitle = titles.find((title) => title === clickTitle);
     if (isMatchTitle) {
-      alert('Can not add same course at a time.');
+      TitleMatch();
+      return 0;
+    }
+    const sumCredit = totalCredit + credit;
+    if (sumCredit > 20) {
+      maxCreditReach();
       return 0;
     }
     setTotalPrice(totalPrice + price);
